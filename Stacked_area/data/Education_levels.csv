@@ -1,4 +1,4 @@
-Entity,Code,Year,"Teachers in lower secondary education, both sexes (number)","Teachers in pre-primary education, both sexes (number)","Teachers in primary education, both sexes (number)","Teachers in tertiary education programmes, both sexes (number)","Teachers in upper secondary education, both sexes (number)"
+Entity,Code,Year,"Lower_secondary_education","Pre-primary_education","Primary_education","Tertiary_education_programmes","Upper_secondary_education"
 Afghanistan,AFG,1970,,42,13116,793,
 Afghanistan,AFG,1971,,42,14651,,
 Afghanistan,AFG,1972,,65,14796,972,
