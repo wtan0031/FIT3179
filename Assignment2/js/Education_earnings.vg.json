@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple radial chart with embedded data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/wtan0031/FIT3179/main/Radial/data/Earnings.csv"
+  },
+  "width": 800,
+  "height": 300,
+  "layer": [
+    {"mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}},
+    {
+      "mark": {"type": "text", "radiusOffset": 10},
+      "encoding": {
+        "text": {"field": "Median usual weekly earnings", "type": "nominal"}
+      }
+    }
+  ],
+  "encoding": {
+    "theta": {
+      "field": "Median usual weekly earnings",
+      "type": "quantitative",
+      "stack": true
+    },
+    "radius": {
+      "field": "Median usual weekly earnings",
+      "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}
+    },
+    "color": {
+      "field": "Education Attainment",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "domain": [
+          "Doctoral Degree",
+          "Master's Degree",
+          "Bachelor's Degree",
+          "Some College, no degree",
+          "High School Diploma",
+          "Less than High School Diploma"
+        ],
+        "range": [
+          "#332288",
+          "#117733",
+          "#44AA99",
+          "#CC6677",
+          "#AA4499",
+          "#882255"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Education Attainment",
+        "type": "nominal",
+        "title": "Education Attainment"
+      },
+      {
+        "field": "Unemployment Rate",
+        "type": "nominal",
+        "title": "Unemployment Rate (%) "
+      }
+    ]
+  },
+  "view": {"stroke": null},
+  "config": {}
+}
