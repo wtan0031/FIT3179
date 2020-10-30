@@ -4,7 +4,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/wtan0031/FIT3179/main/Radial/data/Earnings.csv"
   },
-  "width": 800,
+  "width": 500,
   "height": 300,
   "layer": [
     {"mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}},
