@@ -1,0 +1,167 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "values": [
+      {"label": "Begin", "amount": 0.78},
+      {"label": "2000", "amount": 42.3},
+      {"label": "2004", "amount": 21.69},
+      {"label": "2008", "amount": 9.23},
+      {"label": "2012", "amount": 0.7},
+      {"label": "2016", "amount": 1.48},
+      {"label": "End", "amount": 0}
+    ]
+  },
+  "width": 600,
+  "height": 500,
+  "transform": [
+    {"window": [{"op": "sum", "field": "amount", "as": "sum"}]},
+    {"window": [{"op": "lead", "field": "label", "as": "lead"}]},
+    {
+      "calculate": "datum.lead === null ? datum.label : datum.lead",
+      "as": "lead"
+    },
+    {
+      "calculate": "datum.label === 'End' ? 0 : datum.sum - datum.amount",
+      "as": "previous_sum"
+    },
+    {
+      "calculate": "datum.label === 'End' ? datum.sum : datum.amount",
+      "as": "amount"
+    },
+    {
+      "calculate": "(datum.label !== 'Begin' && datum.label !== 'End' && datum.amount > 0 ? '+' : '') + datum.amount",
+      "as": "text_amount"
+    },
+    {"calculate": "(datum.sum + datum.previous_sum) / 2", "as": "center"},
+    {
+      "calculate": "datum.sum < datum.previous_sum ? datum.sum : ''",
+      "as": "sum_dec"
+    },
+    {
+      "calculate": "datum.sum > datum.previous_sum ? datum.sum : ''",
+      "as": "sum_inc"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "label",
+      "type": "ordinal",
+      "sort": null,
+      "axis": {"labelAngle": 0, "title": "Year"}
+    },
+    "tooltip": [
+      {"field": "amount", "title": "Population Number Change"},
+      {"field": "label", "title": "Year"}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "size": 45},
+      "encoding": {
+        "y": {
+          "field": "previous_sum",
+          "type": "quantitative",
+          "title": "Individuals Using The Internet In The USA (%)"
+        },
+        "y2": {"field": "sum"},
+        "color": {
+          "condition": [
+            {
+              "test": "datum.label === 'Begin' || datum.label === 'End'",
+              "value": "#f7e0b6"
+            },
+            {"test": "datum.sum < datum.previous_sum", "value": "#f78a64"}
+          ],
+          "value": "#93c4aa"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#404040",
+        "opacity": 1,
+        "strokeWidth": 2,
+        "xOffset": -22.5,
+        "x2Offset": 22.5
+      },
+      "encoding": {
+        "x2": {"field": "lead"},
+        "y": {"field": "sum", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -4, "baseline": "bottom"},
+      "encoding": {
+        "y": {"field": "sum_inc", "type": "quantitative"},
+        "text": {"field": "sum_inc", "type": "nominal"}
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": 4, "baseline": "top"},
+      "encoding": {
+        "y": {"field": "sum_dec", "type": "quantitative"},
+        "text": {"field": "sum_dec", "type": "nominal"}
+      }
+    },
+    {
+      "mark": {"type": "text", "fontWeight": "bold", "baseline": "middle"},
+      "encoding": {
+        "y": {"field": "center", "type": "quantitative"},
+        "text": {"field": "text_amount", "type": "nominal"},
+        "color": {
+          "condition": [
+            {
+              "test": "datum.label === 'Begin' || datum.label === 'End'",
+              "value": "#725a30"
+            }
+          ],
+          "value": "white"
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "rgb(255,247,238)",
+    "arc": {"fill": "#ab5787"},
+    "area": {"fill": "#ab5787"},
+    "line": {"stroke": "#ab5787"},
+    "path": {"stroke": "#ab5787"},
+    "rect": {"fill": "#ab5787"},
+    "shape": {"stroke": "#ab5787"},
+    "symbol": {"fill": "#ab5787", "size": 30},
+    "axis": {
+      "domainColor": "#979797",
+      "domainWidth": 0.5,
+      "gridWidth": 0.2,
+      "labelColor": "#979797",
+      "tickColor": "#979797",
+      "tickWidth": 0.2,
+      "titleColor": "#979797"
+    },
+    "axisBand": {"grid": false},
+    "axisX": {"grid": true, "tickSize": 10},
+    "axisY": {"domain": false, "grid": true, "tickSize": 0},
+    "legend": {
+      "labelFontSize": 11,
+      "padding": 1,
+      "symbolSize": 30,
+      "symbolType": "square"
+    },
+    "range": {
+      "category": [
+        "#ab5787",
+        "#51b2e5",
+        "#703c5c",
+        "#168dd9",
+        "#d190b6",
+        "#00609f",
+        "#d365ba",
+        "#154866",
+        "#666666",
+        "#c4c4c4"
+      ]
+    },
+    "text": {"fontWeight": "bold", "color": "#404040"}
+  }
+}
