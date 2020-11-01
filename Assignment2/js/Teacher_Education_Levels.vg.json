@@ -1,15 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 300,
-  "height": 200,
+  "width": 500,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/wtan0031/FIT3179/main/Stacked_area/data/World_education_levels.csv"
   },
   "mark": "area",
   "selection": {
     "industry": {
-      "type": "multi",
+      "type": "single",
       "fields": ["Education_levels"],
+      "on": "mouseover",
       "bind": "legend"
     }
   },
@@ -42,7 +43,11 @@
     "opacity": {
       "condition": {"selection": "industry", "value": 1},
       "value": 0.2
-    }
+    },
+    "tooltip": [
+        {"field": "Year", "timeUnit": "year", "title": "Year"},
+        {"field": "Education_levels", "aggregate": "sum", "type": "quantitative", "title": "Count"}
+    ]
   },
   "config": {}
 }
