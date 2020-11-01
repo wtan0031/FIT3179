@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
-  "height": 300,
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/wtan0031/FIT3179/main/Stacked_area/data/World_education_levels.csv"
   },
