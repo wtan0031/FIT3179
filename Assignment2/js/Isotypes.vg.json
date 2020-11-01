@@ -1,16 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "config": {"view": {"stroke": ""}},
-  "width": 600,
-  "height": 200,
+  "width": 400,
+  "height": 50,
   "data": {
     "values": [
-      {"country": "United States", "category": "University"},
-      {"country": "United States", "category": "University"},
-      {"country": "United States", "category": "University"},
-      {"country": "United States", "category": "University"},
-      {"country": "United States", "category": "University"},
-      {"country": "United States", "category": "University"},
       {"country": "United States", "category": "Faculty"},
       {"country": "United States", "category": "Faculty"},
       {"country": "United States", "category": "Faculty"},
@@ -18,8 +12,7 @@
       {"country": "United States", "category": "Faculty"},
       {"country": "United States", "category": "Faculty"},
       {"country": "United States", "category": "Faculty"},
-      {"country": "United States", "category": "Faculty"},
-      {"country": "United States", "category": "Academic Leaders"}
+      {"country": "United States", "category": "Faculty"}
     ]
   },
   "transform": [
@@ -38,7 +31,7 @@
     "y": {"field": "category", "type": "nominal", "axis": null, "sort": null},
     "row": {"field": "country", "header": {"title": ""}},
     "text": {"field": "emoji", "type": "nominal"},
-    "size": {"value": 65},
+    "size": {"value": 40},
     "tooltip": [{"field": "category", "type": "nominal", "title": "Category"}]
   }
 }
