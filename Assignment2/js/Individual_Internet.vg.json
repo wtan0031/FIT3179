@@ -2,12 +2,14 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "data": {
     "values": [
-      {"label": "Begin", "amount": 0.78},
-      {"label": "2000", "amount": 42.3},
-      {"label": "2004", "amount": 21.69},
-      {"label": "2008", "amount": 9.23},
-      {"label": "2012", "amount": 0.7},
-      {"label": "2016", "amount": 1.48},
+      {"label": "Begin", "amount": 4.86},
+      {"label": "1995", "amount": 4.38},
+      {"label": "1999", "amount": 26.61},
+      {"label": "2003", "amount": 25.85},
+      {"label": "2007", "amount": 13.3},
+      {"label": "2011", "amount": -5.27},
+      {"label": "2015", "amount": 4.83},
+      {"label": "2016", "amount": 1.62},
       {"label": "End", "amount": 0}
     ]
   },
@@ -72,7 +74,7 @@
             },
             {"test": "datum.sum < datum.previous_sum", "value": "#f78a64"}
           ],
-          "value": "#93c4aa"
+          "value": "#5ba47d"
         }
       }
     },
