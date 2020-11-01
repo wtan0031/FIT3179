@@ -46,7 +46,7 @@
     },
     "tooltip": [
         {"field": "Year", "timeUnit": "year", "title": "Year"},
-        {"field": "Education_levels", "aggregate": "sum", "type": "quantitative", "title": "Count"}
+        {"field": "Education_levels", "type": "quantitative", "title": "Number of Teachers"}
     ]
   },
   "config": {}
