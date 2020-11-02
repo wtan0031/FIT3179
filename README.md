@@ -1,5 +1,7 @@
 # FIT3179 Assignment 2
 
+Assignment 2 Link: https://wtan0031.github.io/FIT3179/Assignment2/pure_css.html
+
 Preview Link : https://wtan0031.github.io/FIT3179/
 
 Choropleth Graph: https://wtan0031.github.io/FIT3179/Choropleth/
