@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="icon.png">
+  <title>Endangered Species Visualisation 2</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- custom style -->
+  <style>
+    *{
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    h1{
+      font-weight: 900;
+      text-align : center;
+    }
+
+    gg {
+    margin-left: 7%;
+}
+
+gz {
+    margin-left: 12%;
+}
+
+    gh {
+    margin-left: 5%;
+}
+
+    ga {
+    text-align: center;
+    color: #990000;
+    font-style: bold;
+    font-size: 20;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 12%
+}
+
+    img#backimg {
+    margin-left: -49px;
+    width: 111.75%;
+    margin-bottom: -110px;
+}
+
+km{
+  color: #990000;
+}
+
+kj {
+    font-weight: bold;
+    color: rgb(0,146,146);
+}
+
+     body{
+       background-color: lightgray;
+     }
+     .page{
+       width: 850px;    
+       background-color: rgb(0,0,0);   
+       margin: auto;
+       padding: 50px;
+       padding-top: 35px;
+    }
+    .vis-container{
+      width: 100%;
+    }
+
+    img#ICUN {
+    margin-left: 26%;
+}
+    div#vis3 {
+    margin-left: -40px;
+}
+    img#titleimg {
+    margin-left: 15px;
+}
+    .description h2, h1{
+      margin-top:0px;
+    }
+    .description-right {
+      padding-left: 20px;
+    }
+    .description-left{
+      padding-right: 20px;
+    }
+    .pure-g{
+      margin-bottom: 25px;
+    }
+    .small-font{
+        font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+ <div class="page">
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u">
+          <h1>Bibliography</h1>
+        <p style="margin-left: 1cm; text-indent: -1cm;">World Bank, World Development Indicators & UN World Population Prospects (2017). Retrieved October 23, 2020, from <a href="http://data.worldbank.org/data-catalog/world-development-indicators ; https://esa.un.org/unpd/wpp/Download/Standard/Population/">Link</a></p>
+        <p style="margin-left: 1cm; text-indent: -1cm;">Our World in Data. (2017). Threatened mammal species. Retrieved October 28, 2020, from <a href="https://ourworldindata.org/grapher/threatened-mammal-species">https://ourworldindata.org/grapher/threatened-mammal-species</a></p>
+        <p style="margin-left: 1cm; text-indent: -1cm;">Our World in Data. (2017). Threatened fish species. Retrieved October 28, 2020, from <a href="https://ourworldindata.org/grapher/threatened-mammal-species">https://ourworldindata.org/grapher/threatened-fish-species</a></p>
+        <p style="margin-left: 1cm; text-indent: -1cm;">Our World in Data. (2017). Threatened bird species. Retrieved October 28, 2020, from <a href="https://ourworldindata.org/grapher/threatened-mammal-species">https://ourworldindata.org/grapher/threatened-bird-species</a></p>
+        <p style="margin-left: 1cm; text-indent: -1cm;">NASA. (2020, July 16). Global Surface Temperature. Retrieved October 28, 2020, from <a href="https://climate.nasa.gov/vital-signs/global-temperature/">https://climate.nasa.gov/vital-signs/global-temperature/</a></p>
+        <p style="margin-left: 1cm; text-indent: -1cm;">Howard, B. (2017, December 15). How We&apos;re Endangering Animals [Infographic]. Retrieved October 28, 2020, from <a href="https://blog.nationalgeographic.org/2012/04/16/how-were-endangering-animals-infographic/">https://blog.nationalgeographic.org/2012/04/16/how-were-endangering-animals-infographic/</a></p>
+        <p style="margin-left: 1cm; text-indent: -1cm;">Pershing, A., Christensen, L., Record, N., Sherwood, G., &amp; Stetson, P. (2010). The Impact of Whaling on the Ocean Carbon Cycle: Why Bigger Was Better. Retrieved October 28, 2020, from <a href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0012444"></a><a href="https://ourworldindata.org/grapher/whale-populations">https://ourworldindata.org/grapher/whale-populations</a></p>
+        <p style="margin-left: 1cm; text-indent: -1cm;">International Whaling Commission. (n.d.). Membership. Retrieved October 28, 2020, from <a href="https://iwc.int/members">https://iwc.int/members</a></p>
+        <p style="margin-left: 1cm; text-indent: -1cm;">N., Z., Alexandre N. Zerbini Alexandre N. Zerbini http://orcid.org/0000-0002-9776-6605 Marine Mammal Laboratory, Zerbini, A., Alexandre N. Zerbini http://orcid.org/0000-0002-9776-6605 Marine Mammal Laboratory, Adams, G., Grant Adams http://orcid.org/0000-0003-0297-8347 School of Aquatic and Fishery Sciences, . . . Electronic supplementary material is available online at https://doi.org/10.6084/m9.figshare.c.4688924. (2019, October 16). Assessing the recovery of an Antarctic predator from historical exploitation. Retrieved October 29, 2020, from https://royalsocietypublishing.org/doi/10.1098/rsos.190368</p>
+        <p style="margin-left: 1cm; text-indent: -1cm;"><br></p>
+      </div>
+    </div>
+
+</body>
+</html>
