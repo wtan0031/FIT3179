@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "config": {"view": {"stroke": ""}},
-  "width": 250,
-  "height": 150,
+  "width": "container",
+  "height": 300,
   "data": {
     "values": [
       {"country": "United States", "category": "University"},
@@ -30,7 +30,7 @@
     "y": {"field": "category", "type": "nominal", "axis": null, "sort": null},
     "row": {"field": "country", "header": {"title": ""}},
     "text": {"field": "emoji", "type": "nominal"},
-    "size": {"value": 40},
+    "size": {"value": 100},
     "tooltip": [{"field": "category", "type": "nominal", "title": "Category"}]
   }
 }
