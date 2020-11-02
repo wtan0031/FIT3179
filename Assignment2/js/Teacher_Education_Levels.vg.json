@@ -38,7 +38,7 @@
         ],
         "range": ["#648FFF", "#785EF0", "#DC267F", "#FE6100", "#FFB000"]
       },
-      "title": "World Education Levels"
+      "title": "World Teacher's Education Levels"
     },
     "opacity": {
       "condition": {"selection": "industry", "value": 1},
