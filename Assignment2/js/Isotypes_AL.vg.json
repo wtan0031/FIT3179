@@ -30,7 +30,7 @@
     "y": {"field": "category", "type": "nominal", "axis": null, "sort": null},
     "row": {"field": "country", "header": {"title": ""}},
     "text": {"field": "emoji", "type": "nominal"},
-    "size": {"value": 100},
+    "size": {"value": 80},
     "tooltip": [{"field": "category", "type": "nominal", "title": "Category"}]
   }
 }
