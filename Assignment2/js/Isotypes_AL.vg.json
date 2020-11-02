@@ -1,10 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "config": {"view": {"stroke": ""}},
-  "width": 50,
-  "height": 50,
+  "width": 250,
+  "height": 150,
   "data": {
     "values": [
+      {"country": "United States", "category": "University"},
+      {"country": "United States", "category": "University"},
+      {"country": "United States", "category": "University"},
+      {"country": "United States", "category": "University"},
+      {"country": "United States", "category": "Faculty"},
+      {"country": "United States", "category": "Faculty"},
       {"country": "United States", "category": "Academic Leaders"}
     ]
   },
