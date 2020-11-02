@@ -5,18 +5,19 @@
   "height": 300,
   "data": {
     "values": [
-      {"country": "United States", "category": "University"},
-      {"country": "United States", "category": "University"},
-      {"country": "United States", "category": "University"},
-      {"country": "United States", "category": "University"},
+      {"country": "United States", "category": "Private Colleges and Universities"},
+      {"country": "United States", "category": "Private Colleges and Universities"},
+      {"country": "United States", "category": "Private Colleges and Universities"},
+      {"country": "United States", "category": "Private Colleges and Universities"},
       {"country": "United States", "category": "Faculty"},
       {"country": "United States", "category": "Faculty"},
+      {"country": "United States", "category": "Academic Leaders"},
       {"country": "United States", "category": "Academic Leaders"}
     ]
   },
   "transform": [
     {
-      "calculate": "{'University': '🏛', 'Academic Leaders': '👩🏻‍🏫', 'Faculty': '🏫'}[datum.category]",
+      "calculate": "{'Private Colleges and Universities': '🏛', 'Academic Leaders': '👩🏻‍🏫', 'Faculty': '🏫'}[datum.category]",
       "as": "emoji"
     },
     {
