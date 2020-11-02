@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "description": "A simple radial chart with embedded data.",
+  "description": "A radial chart with Education Earnings data.",
   "data": {
     "url": "https://raw.githubusercontent.com/wtan0031/FIT3179/main/Radial/data/Earnings.csv"
   },
-  "width": 300,
+  "width": "container",
   "height": 300,
   "layer": [
     {"mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}},
@@ -28,7 +28,6 @@
     "color": {
       "field": "Education Attainment",
       "type": "nominal",
-      "legend": null,
       "scale": {
         "domain": [
           "Doctoral Degree",
